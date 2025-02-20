@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt 
 
 # Construction of the Fisher Symmetric Measurements
 def FSM( d, phase=1 ): #con phase=1, construye el povm negativo
@@ -133,7 +132,6 @@ def TomoAnaliticaMLE(state,ensamble, shots_1 , shots_2):
     angles = np.arctan2( Ck.real , Bk.real )
 
     #Ecuación para b0^2
-
     beta0 = np.zeros(2*d-1)
 
     for i in range(2*d-1):
@@ -142,7 +140,7 @@ def TomoAnaliticaMLE(state,ensamble, shots_1 , shots_2):
 
         beta0[i] = np.real(2*np.sqrt( num / den ))
 
-    mean_beta0 = np.mean(beta0)
+    mean_beta0 = np.mean(beta0) # choose the mean result of beta0
 
     betak = np.sqrt( Bk**2 + Ck**2 ) / mean_beta0
 
